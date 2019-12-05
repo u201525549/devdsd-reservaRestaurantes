@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDRestaurantesModelStoreContainer" CdmEntityContainer="RestauranteConnection">
+    <EntitySetMapping Name="t_distrito">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_distrito">
+        <MappingFragment StoreEntitySet="t_distrito">
+          <ScalarProperty Name="dist_id" ColumnName="dist_id" />
+          <ScalarProperty Name="dist_nombre" ColumnName="dist_nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_especialidadtipo">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_especialidadtipo">
+        <MappingFragment StoreEntitySet="t_especialidadtipo">
+          <ScalarProperty Name="esti_id" ColumnName="esti_id" />
+          <ScalarProperty Name="esti_descrip" ColumnName="esti_descrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_estado">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_estado">
+        <MappingFragment StoreEntitySet="t_estado">
+          <ScalarProperty Name="esta_id" ColumnName="esta_id" />
+          <ScalarProperty Name="esta_tabla" ColumnName="esta_tabla" />
+          <ScalarProperty Name="esta_nombre" ColumnName="esta_nombre" />
+          <ScalarProperty Name="esta_descrip" ColumnName="esta_descrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_menu">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_menu">
+        <MappingFragment StoreEntitySet="t_menu">
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          <ScalarProperty Name="menu_nombre" ColumnName="menu_nombre" />
+          <ScalarProperty Name="menu_estado" ColumnName="menu_estado" />
+          <ScalarProperty Name="menu_publicado" ColumnName="menu_publicado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_menudetalle">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_menudetalle">
+        <MappingFragment StoreEntitySet="t_menudetalle">
+          <ScalarProperty Name="mede_id" ColumnName="mede_id" />
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          <ScalarProperty Name="prod_id" ColumnName="prod_id" />
+          <ScalarProperty Name="mede_precio" ColumnName="mede_precio" />
+          <ScalarProperty Name="mede_disponible" ColumnName="mede_disponible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_modoatencion">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_modoatencion">
+        <MappingFragment StoreEntitySet="t_modoatencion">
+          <ScalarProperty Name="moat_id" ColumnName="moat_id" />
+          <ScalarProperty Name="moat_descrip" ColumnName="moat_descrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_pago">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_pago">
+        <MappingFragment StoreEntitySet="t_pago">
+          <ScalarProperty Name="pago_id" ColumnName="pago_id" />
+          <ScalarProperty Name="pago_fechhora" ColumnName="pago_fechhora" />
+          <ScalarProperty Name="pago_nrotarjeta" ColumnName="pago_nrotarjeta" />
+          <ScalarProperty Name="pago_codseguridad" ColumnName="pago_codseguridad" />
+          <ScalarProperty Name="pago_monto" ColumnName="pago_monto" />
+          <ScalarProperty Name="pedi_id" ColumnName="pedi_id" />
+          <ScalarProperty Name="usu_id" ColumnName="usu_id" />
+          <ScalarProperty Name="ticta_id" ColumnName="ticta_id" />
+          <ScalarProperty Name="uscta_numero" ColumnName="uscta_numero" />
+          <ScalarProperty Name="uscta_titular" ColumnName="uscta_titular" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_pedido">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_pedido">
+        <MappingFragment StoreEntitySet="t_pedido">
+          <ScalarProperty Name="pedi_id" ColumnName="pedi_id" />
+          <ScalarProperty Name="pedi_fechhora" ColumnName="pedi_fechhora" />
+          <ScalarProperty Name="usua_id" ColumnName="usua_id" />
+          <ScalarProperty Name="rest_ruc" ColumnName="rest_ruc" />
+          <ScalarProperty Name="moat_id" ColumnName="moat_id" />
+          <ScalarProperty Name="pedi_mensaje" ColumnName="pedi_mensaje" />
+          <ScalarProperty Name="pedi_estado" ColumnName="pedi_estado" />
+          <ScalarProperty Name="esta_id" ColumnName="esta_id" />
+          <ScalarProperty Name="pedi_subtotal" ColumnName="pedi_subtotal" />
+          <ScalarProperty Name="pedi_precioenvio" ColumnName="pedi_precioenvio" />
+          <ScalarProperty Name="pedi_descuento" ColumnName="pedi_descuento" />
+          <ScalarProperty Name="pedi_recargo" ColumnName="pedi_recargo" />
+          <ScalarProperty Name="pedi_total" ColumnName="pedi_total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_producto">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_producto">
+        <MappingFragment StoreEntitySet="t_producto">
+          <ScalarProperty Name="prod_id" ColumnName="prod_id" />
+          <ScalarProperty Name="prod_nombre" ColumnName="prod_nombre" />
+          <ScalarProperty Name="prod_descrip" ColumnName="prod_descrip" />
+          <ScalarProperty Name="prod_precio" ColumnName="prod_precio" />
+          <ScalarProperty Name="tico_id" ColumnName="tico_id" />
+          <ScalarProperty Name="rest_ruc" ColumnName="rest_ruc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_reserva">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_reserva">
+        <MappingFragment StoreEntitySet="t_reserva">
+          <ScalarProperty Name="rese_id" ColumnName="rese_id" />
+          <ScalarProperty Name="rese_fechhorareg" ColumnName="rese_fechhorareg" />
+          <ScalarProperty Name="rest_ruc" ColumnName="rest_ruc" />
+          <ScalarProperty Name="usua_id" ColumnName="usua_id" />
+          <ScalarProperty Name="rese_anombre" ColumnName="rese_anombre" />
+          <ScalarProperty Name="rese_nrocontacto" ColumnName="rese_nrocontacto" />
+          <ScalarProperty Name="rese_fecha" ColumnName="rese_fecha" />
+          <ScalarProperty Name="rese_hora" ColumnName="rese_hora" />
+          <ScalarProperty Name="rese_nroasistentes" ColumnName="rese_nroasistentes" />
+          <ScalarProperty Name="rese_direcenvio" ColumnName="rese_direcenvio" />
+          <ScalarProperty Name="rese_direcrefe" ColumnName="rese_direcrefe" />
+          <ScalarProperty Name="moat_id" ColumnName="moat_id" />
+          <ScalarProperty Name="pedi_id" ColumnName="pedi_id" />
+          <ScalarProperty Name="esta_id" ColumnName="esta_id" />
+          <ScalarProperty Name="rese_mensaje" ColumnName="rese_mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_restaurante">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_restaurante">
+        <MappingFragment StoreEntitySet="t_restaurante">
+          <ScalarProperty Name="rest_ruc" ColumnName="rest_ruc" />
+          <ScalarProperty Name="usua_id" ColumnName="usua_id" />
+          <ScalarProperty Name="rest_rz" ColumnName="rest_rz" />
+          <ScalarProperty Name="rest_nomcomer" ColumnName="rest_nomcomer" />
+          <ScalarProperty Name="esti_id" ColumnName="esti_id" />
+          <ScalarProperty Name="rest_descrip" ColumnName="rest_descrip" />
+          <ScalarProperty Name="rest_delivery" ColumnName="rest_delivery" />
+          <ScalarProperty Name="rest_reservalocal" ColumnName="rest_reservalocal" />
+          <ScalarProperty Name="rest_estado" ColumnName="rest_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_sesion">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_sesion">
+        <MappingFragment StoreEntitySet="t_sesion">
+          <ScalarProperty Name="sesi_id" ColumnName="sesi_id" />
+          <ScalarProperty Name="sesi_fechhora" ColumnName="sesi_fechhora" />
+          <ScalarProperty Name="usua_id" ColumnName="usua_id" />
+          <ScalarProperty Name="sesi_iniciada" ColumnName="sesi_iniciada" />
+          <ScalarProperty Name="sesi_estado" ColumnName="sesi_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_telefono">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_telefono">
+        <MappingFragment StoreEntitySet="t_telefono">
+          <ScalarProperty Name="usua_id" ColumnName="usua_id" />
+          <ScalarProperty Name="tite_id" ColumnName="tite_id" />
+          <ScalarProperty Name="tele_nume" ColumnName="tele_nume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_tipocomida">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_tipocomida">
+        <MappingFragment StoreEntitySet="t_tipocomida">
+          <ScalarProperty Name="tico_id" ColumnName="tico_id" />
+          <ScalarProperty Name="tico_descrip" ColumnName="tico_descrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_tipocta">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_tipocta">
+        <MappingFragment StoreEntitySet="t_tipocta">
+          <ScalarProperty Name="ticta_id" ColumnName="ticta_id" />
+          <ScalarProperty Name="ticta_descrip" ColumnName="ticta_descrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_tipotelefono">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_tipotelefono">
+        <MappingFragment StoreEntitySet="t_tipotelefono">
+          <ScalarProperty Name="tite_id" ColumnName="tite_id" />
+          <ScalarProperty Name="tite_descrip" ColumnName="tite_descrip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_usuario">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_usuario">
+        <MappingFragment StoreEntitySet="t_usuario">
+          <ScalarProperty Name="usua_id" ColumnName="usua_id" />
+          <ScalarProperty Name="usua_email" ColumnName="usua_email" />
+          <ScalarProperty Name="usua_pass" ColumnName="usua_pass" />
+          <ScalarProperty Name="usua_nomb" ColumnName="usua_nomb" />
+          <ScalarProperty Name="usua_dni" ColumnName="usua_dni" />
+          <ScalarProperty Name="usua_direc" ColumnName="usua_direc" />
+          <ScalarProperty Name="dist_id" ColumnName="dist_id" />
+          <ScalarProperty Name="usua_refedirec" ColumnName="usua_refedirec" />
+          <ScalarProperty Name="usua_fecnac" ColumnName="usua_fecnac" />
+          <ScalarProperty Name="usua_rutaimagen" ColumnName="usua_rutaimagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_pedidodetalle">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_pedidodetalle">
+        <MappingFragment StoreEntitySet="t_pedidodetalle">
+          <ScalarProperty Name="pedi_id" ColumnName="pedi_id" />
+          <ScalarProperty Name="mede_id" ColumnName="mede_id" />
+          <ScalarProperty Name="pedi_cant" ColumnName="pedi_cant" />
+          <ScalarProperty Name="pedi_importe" ColumnName="pedi_importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_usuariocuenta">
+      <EntityTypeMapping TypeName="BDRestaurantesModel.t_usuariocuenta">
+        <MappingFragment StoreEntitySet="t_usuariocuenta">
+          <ScalarProperty Name="usua_id" ColumnName="usua_id" />
+          <ScalarProperty Name="ticta_id" ColumnName="ticta_id" />
+          <ScalarProperty Name="uscta_numero" ColumnName="uscta_numero" />
+          <ScalarProperty Name="uscta_titular" ColumnName="uscta_titular" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

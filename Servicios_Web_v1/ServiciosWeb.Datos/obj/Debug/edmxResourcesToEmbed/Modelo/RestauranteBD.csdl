@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDRestaurantesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="t_distrito">
+    <Key>
+      <PropertyRef Name="dist_id" />
+    </Key>
+    <Property Name="dist_id" Type="Int32" Nullable="false" />
+    <Property Name="dist_nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_especialidadtipo">
+    <Key>
+      <PropertyRef Name="esti_id" />
+    </Key>
+    <Property Name="esti_id" Type="Int32" Nullable="false" />
+    <Property Name="esti_descrip" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_estado">
+    <Key>
+      <PropertyRef Name="esta_id" />
+    </Key>
+    <Property Name="esta_id" Type="Int32" Nullable="false" />
+    <Property Name="esta_tabla" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="esta_nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="esta_descrip" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_menu">
+    <Key>
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Name="menu_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menu_nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="menu_estado" Type="Boolean" />
+    <Property Name="menu_publicado" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="t_menudetalle">
+    <Key>
+      <PropertyRef Name="mede_id" />
+    </Key>
+    <Property Name="mede_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menu_id" Type="Int64" Nullable="false" />
+    <Property Name="prod_id" Type="Int64" Nullable="false" />
+    <Property Name="mede_precio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="mede_disponible" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="t_modoatencion">
+    <Key>
+      <PropertyRef Name="moat_id" />
+    </Key>
+    <Property Name="moat_id" Type="Int32" Nullable="false" />
+    <Property Name="moat_descrip" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_pago">
+    <Key>
+      <PropertyRef Name="pago_id" />
+    </Key>
+    <Property Name="pago_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pago_fechhora" Type="DateTime" Precision="3" />
+    <Property Name="pago_nrotarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="pago_codseguridad" Type="Int32" />
+    <Property Name="pago_monto" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="pedi_id" Type="Int64" />
+    <Property Name="usu_id" Type="Int64" />
+    <Property Name="ticta_id" Type="Int32" />
+    <Property Name="uscta_numero" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="uscta_titular" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_pedido">
+    <Key>
+      <PropertyRef Name="pedi_id" />
+    </Key>
+    <Property Name="pedi_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pedi_fechhora" Type="DateTime" Precision="3" />
+    <Property Name="usua_id" Type="Int64" />
+    <Property Name="rest_ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="moat_id" Type="Int32" />
+    <Property Name="pedi_mensaje" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="pedi_estado" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="esta_id" Type="Int32" />
+    <Property Name="pedi_subtotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="pedi_precioenvio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="pedi_descuento" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="pedi_recargo" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="pedi_total" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="t_producto">
+    <Key>
+      <PropertyRef Name="prod_id" />
+    </Key>
+    <Property Name="prod_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prod_nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="prod_descrip" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="prod_precio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="tico_id" Type="Int32" />
+    <Property Name="rest_ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_reserva">
+    <Key>
+      <PropertyRef Name="rese_id" />
+    </Key>
+    <Property Name="rese_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rese_fechhorareg" Type="DateTime" Precision="3" />
+    <Property Name="rest_ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="usua_id" Type="Int64" />
+    <Property Name="rese_anombre" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="rese_nrocontacto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="rese_fecha" Type="DateTime" Precision="0" />
+    <Property Name="rese_hora" Type="Time" Precision="7" />
+    <Property Name="rese_nroasistentes" Type="Int32" />
+    <Property Name="rese_direcenvio" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rese_direcrefe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="moat_id" Type="Int32" />
+    <Property Name="pedi_id" Type="Int64" />
+    <Property Name="esta_id" Type="Int32" />
+    <Property Name="rese_mensaje" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_restaurante">
+    <Key>
+      <PropertyRef Name="rest_ruc" />
+    </Key>
+    <Property Name="rest_ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="usua_id" Type="Int64" Nullable="false" />
+    <Property Name="rest_rz" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rest_nomcomer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="esti_id" Type="Int32" />
+    <Property Name="rest_descrip" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="rest_delivery" Type="Boolean" />
+    <Property Name="rest_reservalocal" Type="Boolean" />
+    <Property Name="rest_estado" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="t_sesion">
+    <Key>
+      <PropertyRef Name="sesi_id" />
+    </Key>
+    <Property Name="sesi_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sesi_fechhora" Type="DateTime" Precision="3" />
+    <Property Name="usua_id" Type="Int64" />
+    <Property Name="sesi_iniciada" Type="Boolean" />
+    <Property Name="sesi_estado" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="t_telefono">
+    <Key>
+      <PropertyRef Name="usua_id" />
+      <PropertyRef Name="tite_id" />
+      <PropertyRef Name="tele_nume" />
+    </Key>
+    <Property Name="usua_id" Type="Int64" Nullable="false" />
+    <Property Name="tite_id" Type="Int32" Nullable="false" />
+    <Property Name="tele_nume" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_tipocomida">
+    <Key>
+      <PropertyRef Name="tico_id" />
+    </Key>
+    <Property Name="tico_id" Type="Int32" Nullable="false" />
+    <Property Name="tico_descrip" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_tipocta">
+    <Key>
+      <PropertyRef Name="ticta_id" />
+    </Key>
+    <Property Name="ticta_id" Type="Int32" Nullable="false" />
+    <Property Name="ticta_descrip" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_tipotelefono">
+    <Key>
+      <PropertyRef Name="tite_id" />
+    </Key>
+    <Property Name="tite_id" Type="Int32" Nullable="false" />
+    <Property Name="tite_descrip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_usuario">
+    <Key>
+      <PropertyRef Name="usua_id" />
+    </Key>
+    <Property Name="usua_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usua_email" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="usua_pass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="usua_nomb" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="usua_dni" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="usua_direc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dist_id" Type="Int32" />
+    <Property Name="usua_refedirec" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="usua_fecnac" Type="DateTime" Precision="3" />
+    <Property Name="usua_rutaimagen" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_pedidodetalle">
+    <Key>
+      <PropertyRef Name="pedi_id" />
+      <PropertyRef Name="mede_id" />
+    </Key>
+    <Property Name="pedi_id" Type="Int64" Nullable="false" />
+    <Property Name="mede_id" Type="Int64" Nullable="false" />
+    <Property Name="pedi_cant" Type="Int32" />
+    <Property Name="pedi_importe" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="t_usuariocuenta">
+    <Key>
+      <PropertyRef Name="usua_id" />
+      <PropertyRef Name="ticta_id" />
+    </Key>
+    <Property Name="usua_id" Type="Int64" Nullable="false" />
+    <Property Name="ticta_id" Type="Int32" Nullable="false" />
+    <Property Name="uscta_numero" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="uscta_titular" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="RestauranteConnection" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="t_distrito" EntityType="Self.t_distrito" />
+    <EntitySet Name="t_especialidadtipo" EntityType="Self.t_especialidadtipo" />
+    <EntitySet Name="t_estado" EntityType="Self.t_estado" />
+    <EntitySet Name="t_menu" EntityType="Self.t_menu" />
+    <EntitySet Name="t_menudetalle" EntityType="Self.t_menudetalle" />
+    <EntitySet Name="t_modoatencion" EntityType="Self.t_modoatencion" />
+    <EntitySet Name="t_pago" EntityType="Self.t_pago" />
+    <EntitySet Name="t_pedido" EntityType="Self.t_pedido" />
+    <EntitySet Name="t_producto" EntityType="Self.t_producto" />
+    <EntitySet Name="t_reserva" EntityType="Self.t_reserva" />
+    <EntitySet Name="t_restaurante" EntityType="Self.t_restaurante" />
+    <EntitySet Name="t_sesion" EntityType="Self.t_sesion" />
+    <EntitySet Name="t_telefono" EntityType="Self.t_telefono" />
+    <EntitySet Name="t_tipocomida" EntityType="Self.t_tipocomida" />
+    <EntitySet Name="t_tipocta" EntityType="Self.t_tipocta" />
+    <EntitySet Name="t_tipotelefono" EntityType="Self.t_tipotelefono" />
+    <EntitySet Name="t_usuario" EntityType="Self.t_usuario" />
+    <EntitySet Name="t_pedidodetalle" EntityType="Self.t_pedidodetalle" />
+    <EntitySet Name="t_usuariocuenta" EntityType="Self.t_usuariocuenta" />
+  </EntityContainer>
+</Schema>

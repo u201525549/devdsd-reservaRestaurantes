@@ -1,0 +1,5 @@
+D:\Proyectos\VisualStudio\ServiciosWeb\ServiciosWeb.Dominio\bin\Debug\ServiciosWeb.Dominio.dll
+D:\Proyectos\VisualStudio\ServiciosWeb\ServiciosWeb.Dominio\bin\Debug\ServiciosWeb.Dominio.pdb
+D:\Proyectos\VisualStudio\ServiciosWeb\ServiciosWeb.Dominio\obj\Debug\ServiciosWeb.Dominio.csproj.CoreCompileInputs.cache
+D:\Proyectos\VisualStudio\ServiciosWeb\ServiciosWeb.Dominio\obj\Debug\ServiciosWeb.Dominio.dll
+D:\Proyectos\VisualStudio\ServiciosWeb\ServiciosWeb.Dominio\obj\Debug\ServiciosWeb.Dominio.pdb
