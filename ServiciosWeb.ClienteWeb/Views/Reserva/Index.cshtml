@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ServiciosWeb.Dominio.Reserva>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mis Reservas</h2>
+<hr />
+
+<table class="table table-striped table-bordered table-light">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.rese_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.restaurante.rest_nomcomer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rese_fechhorareg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rese_anombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rese_fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rese_nroasistentes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado.esta_nombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.rese_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.restaurante.rest_nomcomer)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.rese_fechhorareg)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.rese_anombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.rese_fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.rese_nroasistentes)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.estado.esta_nombre)
+                </td>
+                <td>
+                    @Html.ActionLink("Ver Detalle", "Details", new {  id=item.rese_id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

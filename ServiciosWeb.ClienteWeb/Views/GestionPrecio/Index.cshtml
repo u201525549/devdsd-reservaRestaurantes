@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ServiciosWeb.Dominio.Producto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Precios</h2>
+
+<div class="row">
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="txtDescripcion">Descripción</label>
+                <input type="text" class="form-control" id="txtDescripcion" placeholder="Ingresar Descripción">
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="txtPrecio">Precio</label>
+                <input type="text" class="form-control" id="txtPrecio" placeholder="Ingresar Precio">
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="ddlTipo">Tipo</label>
+                <select class="form-control" id="ddlTipo">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="margin-top:25px">
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-primary">
+                    AGREGAR
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+<table class="table">
+    <tr>
+        <th style="display:none">
+            @Html.DisplayNameFor(model => model.prod_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prod_descrip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prod_precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td  style="display:none">
+            @Html.DisplayFor(modelItem => item.prod_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prod_descrip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prod_precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

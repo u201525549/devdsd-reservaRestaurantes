@@ -11,12 +11,16 @@ namespace ServiciosWeb.Datos.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class t_pedidodetalle
     {
         public long pedi_id { get; set; }
         public long mede_id { get; set; }
         public Nullable<int> pedi_cant { get; set; }
         public Nullable<decimal> pedi_importe { get; set; }
+        
+        [NotMapped]
+        public t_menudetalle menu_detalle { get; set; }
     }
 }

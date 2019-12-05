@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,5 +19,7 @@ namespace ServiciosWeb.Dominio
         public string usua_refedirec { get; set; }
         public System.DateTime? usua_fecnac { get; set; }
         public string usua_rutaimagen { get; set; }
+        [NotMapped]
+        public Telefono telefono { get; set; }
     }
 }

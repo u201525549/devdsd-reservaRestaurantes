@@ -17,7 +17,7 @@ namespace ServiciosWeb.ClienteWeb.Controllers
         public ActionResult Index()
         {
             HttpClient clienteHTTP = new HttpClient();
-            clienteHTTP.BaseAddress = new Uri("http://localhost:61914/");
+            clienteHTTP.BaseAddress = new Uri("http://localhost:61915/");
 
             var request = clienteHTTP.GetAsync("api/Usuario").Result;
 
@@ -44,7 +44,7 @@ namespace ServiciosWeb.ClienteWeb.Controllers
         public ActionResult Nuevo(Usuario usuario) //enviamos la info al API
         {
             HttpClient clienteHTTP = new HttpClient();
-            clienteHTTP.BaseAddress = new Uri("http://localhost:61914/");
+            clienteHTTP.BaseAddress = new Uri("http://localhost:61915/");
 
             var request = clienteHTTP.PostAsync("api/Usuario", usuario, new JsonMediaTypeFormatter()).Result;  //COMO VA ENVIAR EN EL CUERPO DE LA PAGINA, entonces se va enviar un objeto que viaja en formato JSON
 
@@ -69,7 +69,7 @@ namespace ServiciosWeb.ClienteWeb.Controllers
         public ActionResult Actualizar(int id)
         {
             HttpClient clienteHTTP = new HttpClient();
-            clienteHTTP.BaseAddress = new Uri("http://localhost:61914/");
+            clienteHTTP.BaseAddress = new Uri("http://localhost:61915/");
 
             var request = clienteHTTP.GetAsync("api/Usuario?id=" + id).Result;
             //var request = clienteHTTP.GetAsync("api/Usuario?id=" + id + "&nombre="+ nombre).Result;    // En el caso de que se qjiera pasar más de un parámetro
@@ -87,7 +87,7 @@ namespace ServiciosWeb.ClienteWeb.Controllers
         public ActionResult Actualizar(Usuario usuario)
         {
             HttpClient clienteHTTP = new HttpClient();
-            clienteHTTP.BaseAddress = new Uri("http://localhost:61914/");
+            clienteHTTP.BaseAddress = new Uri("http://localhost:61915/");
 
             var request = clienteHTTP.PutAsync("api/Usuario", usuario, new JsonMediaTypeFormatter()).Result;  //se va enviar un objeto que viaja en formato JSON
 
@@ -111,7 +111,7 @@ namespace ServiciosWeb.ClienteWeb.Controllers
         public ActionResult Eliminar(int id)
         {
             HttpClient clienteHTTP = new HttpClient();
-            clienteHTTP.BaseAddress = new Uri("http://localhost:61914/");
+            clienteHTTP.BaseAddress = new Uri("http://localhost:61915/");
 
             var request = clienteHTTP.DeleteAsync("api/Usuario?id=" + id).Result;
             //var request = clienteHTTP.DeleteAsync("api/Usuario?id=" + id + "&nombre="+ nombre).Result;    // En el caso de que se qjiera pasar más de un parámetro
@@ -135,7 +135,7 @@ namespace ServiciosWeb.ClienteWeb.Controllers
         public ActionResult Detalle(int id)
         {
             HttpClient clienteHTTP = new HttpClient();
-            clienteHTTP.BaseAddress = new Uri("http://localhost:61914/");
+            clienteHTTP.BaseAddress = new Uri("http://localhost:61915/");
 
             var request = clienteHTTP.GetAsync("api/Usuario?id=" + id).Result;
             //var request = clienteHTTP.GetAsync("api/Usuario?id=" + id + "&nombre="+ nombre).Result;    // En el caso de que se qjiera pasar más de un parámetro

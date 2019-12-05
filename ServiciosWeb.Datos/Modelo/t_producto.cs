@@ -11,7 +11,8 @@ namespace ServiciosWeb.Datos.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class t_producto
     {
         public long prod_id { get; set; }
@@ -20,5 +21,8 @@ namespace ServiciosWeb.Datos.Modelo
         public Nullable<decimal> prod_precio { get; set; }
         public Nullable<int> tico_id { get; set; }
         public string rest_ruc { get; set; }
+
+        [NotMapped]
+        public t_tipocomida tipo_comida { get; set; }
     }
 }

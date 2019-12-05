@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .star-rating a {
+        display: inline-block;
+        color: #f39c12; /* gris (normal) */
+    }
+
+    .star-rating:hover a:hover ~ a {
+        color: #f39c12; /* gris (normal) */
+    }
+
+</style>
+
+<h2>Búsqueda de Restaurantes</h2>
+
+<br />
+
+<div class="row ">
+
+    <div class="col-md-3">
+        <div class="form-group row">
+            <label for="ddlDistrito" class="col-sm-4 col-form-label">Distrito</label>
+            <div class="col-sm-8">
+                <select class="form-control" id="ddlDistrito">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group row">
+            <label for="ddlTipo" class="col-sm-6 col-form-label">Especialidad / Tipo</label>
+            <div class="col-sm-6">
+                <select class="form-control" id="ddlTipo">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-group row">
+            <label for="chkModoAtencion" class="col-sm-8 col-form-label">Modo atención</label>
+            <div class="form-check mt-2 col-sm-4">
+                <input type="checkbox" class="form-check-input" id="chkModoAtencion">
+                <label class="form-check-label" for="chkModoAtencion">Delivery</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="form-group row  float-right mr-md-1">
+            @Html.ActionLink("BUSCAR", "Index", new { controller = "Reserva" }, htmlAttributes: new { @class = "btn btn-outline-primary", @role = "button" })
+        </div>
+    </div>
+
+</div>
+
+<hr class="mt-0" />
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <div class="card" style="">
+
+            <div class="card-body border-bottom pr-3 p-3">
+                <label class="col-form-label">Carmelitas</label>
+                @Html.ActionLink("MENU", "Index", new { controller = "Menu" }, htmlAttributes: new { @class = "btn btn-outline-danger float-right", @role = "button" })
+                <div class="form-group mt-2 mb-0">
+                    <img src="~/Content/images/menu.jpg" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text m-0">
+                    Av. Las Gaviotas Nro 234
+                </p>
+                <p class="card-text m-0">
+                    Ref.: Esq. del Pq. Villa Alegre con Cl. Luis Dextre.
+                </p>
+                <p class="card-text m-0">
+                    Telf.: (01) 245-1234
+                </p>
+            </div>
+            <div class="card-body border-top text-center">
+                <div class="star-rating mb-2">
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                </div>
+                @Html.ActionLink("HACER RESERVA", "Create", new { controller = "Reserva" }, htmlAttributes: new { @class = "btn btn-outline-primary", @role = "button" })
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card" style="">
+
+            <div class="card-body border-bottom pr-3 p-3">
+                <label class="col-form-label">Lo Mejor de Militas</label>
+                @Html.ActionLink("MENU", "Index", new { controller = "Reserva" }, htmlAttributes: new { @class = "btn btn-outline-danger float-right", @role = "button" })
+                <div class="form-group mt-2 mb-0">
+                    <img src="~/Content/images/menu.jpg" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text m-0">
+                    Av. Próceres Nro 475
+                </p>
+                <p  class="card-text  m-0">
+                    Ref.: Cruce av. La Marina con av. Pardo
+                </p>
+                <p  class="card-text  m-0">
+                    Telf.: 951662535
+                </p>
+            </div>
+            <div class="card-body border-top text-center">
+                <div class="star-rating mb-2">
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                </div>
+                @Html.ActionLink("HACER RESERVA", "Create", new { controller = "Reserva" }, htmlAttributes: new { @class = "btn btn-outline-primary", @role = "button" })
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card" style="">
+
+            <div class="card-body border-bottom pr-3 p-3">
+                <label class="col-form-label">Punto Azul</label>
+                @Html.ActionLink("MENU", "Index", new { controller = "Reserva" }, htmlAttributes: new { @class = "btn btn-outline-danger float-right", @role = "button" })
+                <div class="form-group mt-2 mb-0">
+                    <img src="~/Content/images/menu.jpg" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text m-0">
+                    Av. Guardia Civil Nro 987
+                </p> 
+                <p class="card-text m-0">
+                    Ref. Espalda de la comisaría ...
+                </p>
+                <p class="card-text m-0">
+                    Telf.: (01) 442-1288
+                </p>
+            </div>
+            <div class="card-body border-top text-center">
+                <div class="star-rating mb-2">
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                    <a href="#">&#9733;</a>
+                </div>
+                @Html.ActionLink("HACER RESERVA", "Create", new { controller = "Reserva" }, htmlAttributes: new { @class = "btn btn-outline-primary", @role = "button" })
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+

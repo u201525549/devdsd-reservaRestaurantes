@@ -2,7 +2,8 @@ namespace ServiciosWeb.Datos.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class t_usuario
     {
         public long usua_id { get; set; }
@@ -15,5 +16,8 @@ namespace ServiciosWeb.Datos.Modelo
         public string usua_refedirec { get; set; }
         public Nullable<System.DateTime> usua_fecnac { get; set; }
         public string usua_rutaimagen { get; set; }
+
+        [NotMapped]
+        public t_telefono telefono { get; set; }
     }
 }

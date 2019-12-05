@@ -11,7 +11,8 @@ namespace ServiciosWeb.Datos.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class t_pedido
     {
         public long pedi_id { get; set; }
@@ -27,5 +28,20 @@ namespace ServiciosWeb.Datos.Modelo
         public Nullable<decimal> pedi_descuento { get; set; }
         public Nullable<decimal> pedi_recargo { get; set; }
         public Nullable<decimal> pedi_total { get; set; }
+
+        [NotMapped]
+        public t_modoatencion modalidad_atencion { get; set; }
+
+        [NotMapped]
+        public List<t_pedidodetalle> pedido_detalle { get; set; }
+
+        [NotMapped]
+        public t_restaurante restaurante { get; set; }
+
+        [NotMapped]
+        public t_usuario usuario { get; set; }
+
+        [NotMapped]
+        public t_reserva reserva { get; set; }
     }
 }

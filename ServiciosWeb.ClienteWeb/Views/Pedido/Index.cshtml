@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ServiciosWeb.Dominio.Pedido>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mis Pedidos</h2>
+<hr />
+
+<table class="table table-striped table-bordered table-light">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.pedi_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.restaurante.rest_nomcomer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pedi_fechhora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pedi_total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modalidad_atencion.moat_descrip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pedi_estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pedi_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.restaurante.rest_nomcomer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pedi_fechhora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pedi_total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.modalidad_atencion.moat_descrip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pedi_estado)
+                </td>
+                <td>
+                    @Html.ActionLink("Ver Detalle", "Details", new { id = item.pedi_id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

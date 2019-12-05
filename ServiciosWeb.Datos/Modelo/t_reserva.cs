@@ -11,7 +11,8 @@ namespace ServiciosWeb.Datos.Modelo
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class t_reserva
     {
         public long rese_id { get; set; }
@@ -29,5 +30,13 @@ namespace ServiciosWeb.Datos.Modelo
         public Nullable<long> pedi_id { get; set; }
         public Nullable<int> esta_id { get; set; }
         public string rese_mensaje { get; set; }
+
+        [NotMapped]
+        public t_estado estado { get; set; }
+        [NotMapped]
+        public t_modoatencion modo_atencion { get; set; }
+
+        [NotMapped]
+        public t_restaurante restaurante { get; set; }
     }
 }
